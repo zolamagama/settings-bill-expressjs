@@ -11,7 +11,6 @@ describe ("The bill with settings factory function", function() {
       settingsBill.setCriticalLevel(10);
      settingsBill.setCallCost(1.85); 
      assert.equal(1.85, settingsBill.getCallCost());
-
      let settingsBill2 = BillWithSettings();
 
      settingsBill2.setCallCost(2.55); 
