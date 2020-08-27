@@ -47,6 +47,7 @@ if (!hasReachedCriticalLevel()){
             type: action,
             cost,
             timestamp: new Date()
+            
 
         
 
@@ -90,11 +91,11 @@ if (!hasReachedCriticalLevel()){
     }
 
   
-    // function hasReachedWarningLevel(){
-    // const total = grandTotal();
-    // const reachedCriticalLevel = total >= warningLevel && total < criticalLevel
+    function hasReachedWarningLevel(){
+    const total = grandTotal();
+    const reachedCriticalLevel = total >= warningLevel && total < criticalLevel
 
-    // }
+    }
 
     function hasReachedCriticalLevel(){
     const total = grandTotal(); 
@@ -132,8 +133,8 @@ if (!hasReachedCriticalLevel()){
         grandTotal,
         getTotal,
         totals,
-        totalClassName
-        // hasReachedWarningLevel,
+        totalClassName,
+        hasReachedWarningLevel
         // hasReachedCriticalLevel,
         // setCallCost,
         // getCallCost,

@@ -1,0 +1,26 @@
+{
+  "name": "bootcamp-terminal-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zolamagama/bootcamp-terminal-tests.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zolamagama/bootcamp-terminal-tests/issues"
+  },
+  "homepage": "https://github.com/zolamagama/bootcamp-terminal-tests#readme",
+  "devDependencies": {
+    "mocha": "^8.1.1"
+  }
+}
