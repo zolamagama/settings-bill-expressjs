@@ -1,4 +1,4 @@
-let assert = require('assert');
+const assert = require('assert');
 const BillWithSettings = require('../settings-bill');
 
 

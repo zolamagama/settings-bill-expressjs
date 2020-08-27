@@ -1,4 +1,7 @@
+var moment = require('moment'); // require
+moment().format(); 
 module.exports = function BillWithSettings() {
+
     let callCost;
     let smsCost;
     let warningLevel;
@@ -46,7 +49,7 @@ if (!hasReachedCriticalLevel()){
         actionList.push({
             type: action,
             cost,
-            timestamp: new Date()
+            timestamp: moment().startOf('ss').fromNow()
             
 
         
