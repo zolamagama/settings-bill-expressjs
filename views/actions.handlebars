@@ -3,17 +3,16 @@
     <h1>Actions</h1>
 
     <table>
-        <th>
-        <td>Type</td>
-        <td>Price</td>
-        <td>When</td>
-        </th>
+        <tr>
+        <th>Type</th>
+        <th>Price</th>
+        <th>When</th>
+        </tr>
         {{#each actions}}
         <tr>
             <td>{{type}}</td>
             <td>{{cost}}</td>
-            <td>{{timestamp}}</td>
-
+            <td>{{prettyDate}}</td>
         </tr>
         {{/each}}
     </table>

@@ -10,6 +10,9 @@ const Settingsbill = require('./settings-bill');
 
 const settingsbill = Settingsbill();
 
+var moment = require('moment'); // require
+moment().format();
+
 
 app.engine('handlebars', exphbs({
     layoutsDir: './views/layouts'
@@ -62,7 +65,7 @@ app.post('/settings', function (req, res) {
 app.post('/action', function (req, res) {
 
     settingsbill.recordAction(req.body.actionType)
- 
+
     res.redirect('/');
 
 });
@@ -70,15 +73,26 @@ app.post('/action', function (req, res) {
 
 app.get('/actions', function (req, res) {
 
-    res.render('actions', { actions: settingsbill.actions() });
+
+    const listOfActions = settingsbill.actions();
+
+    for (action of listOfActions) {
+        action.prettyDate = moment(action.timestamp).fromNow();
+    }
+    res.render('actions', { actions: listOfActions });
+
 });
 
 app.get('/actions/:actionType', function (req, res) {
 
-    // res.render('actions', { actions: settingsbill.actions() });
-
     const actionType = req.params.actionType;
-    res.render('actions', { actions: settingsbill.actionsFor(actionType) })
+
+    const listOfActions = settingsbill.actionsFor(actionType);
+
+    for (action of listOfActions) {
+        action.prettyDate = moment(action.timestamp).fromNow();
+    }
+    res.render('actions', { actions: listOfActions })
 
 });
 
