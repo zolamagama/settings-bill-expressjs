@@ -1,15 +1,14 @@
 {
   "name": "bootcamp-terminal-tests",
   "version": "1.0.0",
-  "description": "",
+  "description": "[![Build Status](https://travis-ci.com/zolamagama/settings-bill-expressjs.svg?branch=master)](https://travis-ci.com/zolamagama/settings-bill-expressjs)",
   "main": "index.js",
   "directories": {
-    "test": "test",
-    "start": "node index.js"
-
+    "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
