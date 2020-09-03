@@ -80,7 +80,6 @@ app.get('/actions', function (req, res) {
         action.prettyDate = moment(action.timestamp).fromNow();
     }
     res.render('actions', { actions: listOfActions });
-
 });
 
 app.get('/actions/:actionType', function (req, res) {

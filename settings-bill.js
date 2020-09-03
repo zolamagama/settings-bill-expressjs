@@ -33,28 +33,32 @@ module.exports = function BillWithSettings() {
     }
 
     function recordAction(action) {
-if (!hasReachedCriticalLevel()){
-        let cost = 0;
-        if (action === 'sms') {
-
-            cost = smsCost
+        if (!action) {
+            return;
         }
-        else if (action === 'call') {
-            cost = callCost
+        if (!hasReachedCriticalLevel()) {
+            let cost = 0;
+            if (action === 'sms') {
 
+                cost = smsCost
+            }
+            else if (action === 'call') {
+                cost = callCost
+
+            }
+
+            actionList.push({
+                type: action,
+                cost,
+                timestamp: new Date()
+
+
+
+
+            });
         }
-
-        actionList.push({
-            type: action,
-            cost,
-            timestamp: new Date()
-            
-
-        
-
-        });
-}
     }
+
 
     function actions() {
 
@@ -91,16 +95,16 @@ if (!hasReachedCriticalLevel()){
 
     }
 
-  
-    function hasReachedWarningLevel(){
-    const total = grandTotal();
-    const reachedCriticalLevel = total >= warningLevel && total < criticalLevel
+
+    function hasReachedWarningLevel() {
+        const total = grandTotal();
+        const reachedCriticalLevel = total >= warningLevel && total < criticalLevel
 
     }
 
-    function hasReachedCriticalLevel(){
-    const total = grandTotal(); 
-    return total >= criticalLevel;
+    function hasReachedCriticalLevel() {
+        const total = grandTotal();
+        return total >= criticalLevel;
 
     }
 
@@ -136,7 +140,7 @@ if (!hasReachedCriticalLevel()){
         totals,
         totalClassName,
         hasReachedWarningLevel
-        
+
 
     };
 }
